@@ -1,0 +1,5 @@
+{
+  "name": "Grammar Structure Visualizer",
+  "description": "A visual English grammar analysis tool based on the 5-sentence pattern structure with admin editing capabilities.",
+  "requestFramePermissions": []
+}
