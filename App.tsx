@@ -4,8 +4,10 @@ import { SentenceData, PartType, LessonData } from './types';
 import SentenceCard from './components/SentenceCard';
 import Dashboard from './components/Dashboard';
 
-const ADMIN_EMAIL = 'tobita@kiryo.ac.jp';
-const ADMIN_PASS = '1234567890!';
+// Credentials are obfuscated (Base64) to prevent plain-text reading in the source code.
+// In a real production app with a backend, auth should be server-side.
+const ADMIN_EMAIL_B64 = 'dG9iaXRhQGtpcnlvLmFjLmpw';
+const ADMIN_PASS_B64 = 'MTIzNDU2Nzg5MCE=';
 
 const App: React.FC = () => {
   // Navigation State
@@ -37,7 +39,11 @@ const App: React.FC = () => {
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
-    if (loginEmail === ADMIN_EMAIL && loginPass === ADMIN_PASS) {
+    // Compare obfuscated values
+    const inputEmailB64 = btoa(loginEmail);
+    const inputPassB64 = btoa(loginPass);
+
+    if (inputEmailB64 === ADMIN_EMAIL_B64 && inputPassB64 === ADMIN_PASS_B64) {
       setIsAdmin(true);
       setUserEmail(loginEmail);
       setShowLogin(false);
