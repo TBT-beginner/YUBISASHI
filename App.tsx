@@ -152,7 +152,7 @@ const App: React.FC = () => {
                   type="email" 
                   value={loginEmail}
                   onChange={(e) => setLoginEmail(e.target.value)}
-                  placeholder="tobita@kiryo.ac.jp"
+                  placeholder=""
                   className="w-full p-2 border border-gray-300 rounded focus:ring-2 focus:ring-blue-500 outline-none"
                   autoFocus
                 />
